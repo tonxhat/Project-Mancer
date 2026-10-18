@@ -1,0 +1,309 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/stage_preset.gd" id="1_ni4wi"]
+[ext_resource type="Texture2D" path="res://art/stages/cave/ground.png" id="2_g1xd8"]
+[ext_resource type="Texture2D" path="res://art/stages/cave/path.png" id="3_8cv5e"]
+[ext_resource type="Texture2D" path="res://art/stages/cave/sky.png" id="4_1mhk3"]
+[ext_resource type="Texture2D" path="res://art/stages/cave/far.png" id="5_4hyp8"]
+[ext_resource type="Texture2D" path="res://art/stages/cave/hor.png" id="6_1rl78"]
+[ext_resource type="Texture2D" path="res://art/stages/cave/rock.png" id="7_vtxgm"]
+[ext_resource type="Texture2D" path="res://art/stages/cave/prop1.png" id="8_54edc"]
+[ext_resource type="Texture2D" path="res://art/stages/cave/prop2.png" id="9_lehem"]
+[ext_resource type="Texture2D" path="res://art/stages/cave/prop3.png" id="10_t8tcu"]
+[ext_resource type="Texture2D" path="res://art/stages/cave/prop4.png" id="11_hmlmq"]
+[ext_resource type="Script" path="res://scripts/flicker_light.gd" id="12_et4tq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vf86s"]
+albedo_texture = ExtResource("2_g1xd8")
+uv1_scale = Vector3(12.8, 12.8, 1)
+texture_filter = 4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6khf6"]
+size = Vector2(60, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fnion"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("3_8cv5e")
+uv1_scale = Vector3(3.6571429, 1, 1)
+texture_filter = 4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jhynl"]
+size = Vector2(40, 3.96875)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8esp1"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_texture = ExtResource("4_1mhk3")
+uv1_scale = Vector3(3, 1, 1)
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_12mcu"]
+size = Vector2(270, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jd1d8"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("5_4hyp8")
+uv1_scale = Vector3(3, 1, 1)
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_qkpp7"]
+size = Vector2(103.5, 11.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r7jsm"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("6_1rl78")
+uv1_scale = Vector3(3, 1, 1)
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_00nej"]
+size = Vector2(57.6, 6.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytif4"]
+albedo_texture = ExtResource("7_vtxgm")
+roughness = 0.95
+uv1_scale = Vector3(0.205, 0.205, 0.205)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_d60fh"]
+size = Vector3(1.3, 0.7, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2ts7w"]
+size = Vector3(1, 0.5, 0.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8awn1"]
+size = Vector3(0.6, 0.35, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vtoaa"]
+size = Vector3(0.9, 0.55, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tfbnq"]
+size = Vector3(0.9, 3.2, 0.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5dtva"]
+size = Vector3(0.8, 2.2, 0.8)
+
+[node name="Cave" type="Node3D" unique_id=98210773]
+script = ExtResource("1_ni4wi")
+stage_name = "CINDER CAVE"
+stage_sub = "STAGE 3  ·  ถ้ำเถ้าถ่าน"
+sun_height_deg = 28.0
+sun_from_left_deg = 40.0
+sun_color = Color(0.75, 0.55, 0.7, 1)
+sun_energy = 0.55
+ambient_color = Color(0.35, 0.36, 0.62, 1)
+ambient_energy = 0.5
+background_color = Color(0.12, 0.06, 0.06, 1)
+exposure = 1.25
+saturation = 0.75
+contrast = 1.3
+glow_strength = 3.0
+haze_density = 0.005
+haze_color = Color(0.28, 0.12, 0.16, 1)
+shafts_enabled = false
+clouds_enabled = false
+cloud_darkness = 0.5
+cloud_color = Color(0.1, 0.05, 0.08, 1)
+dust_color = Color(1, 0.45, 0.15, 1)
+dust_amount = 90
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1309881803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+material_override = SubResource("StandardMaterial3D_vf86s")
+mesh = SubResource("PlaneMesh_6khf6")
+
+[node name="Path" type="MeshInstance3D" parent="." unique_id=308263230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, 0.2)
+material_override = SubResource("StandardMaterial3D_fnion")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_jhynl")
+
+[node name="Backdrop" type="Node3D" parent="." unique_id=1190410131]
+
+[node name="Sky" type="MeshInstance3D" parent="Backdrop" unique_id=1903269775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.1, -70)
+material_override = SubResource("StandardMaterial3D_8esp1")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_12mcu")
+
+[node name="Far" type="MeshInstance3D" parent="Backdrop" unique_id=1205847600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.12, -42)
+material_override = SubResource("StandardMaterial3D_jd1d8")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_qkpp7")
+
+[node name="Hor" type="MeshInstance3D" parent="Backdrop" unique_id=907848966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92, -20)
+material_override = SubResource("StandardMaterial3D_r7jsm")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_00nej")
+
+[node name="Props" type="Node3D" parent="." unique_id=885166427]
+
+[node name="RockA" type="MeshInstance3D" parent="Props" unique_id=1101710191]
+transform = Transform3D(0.90630776, 0, -0.42261827, 0, 1, 0, 0.42261827, 0, 0.90630776, 3.7, 0.35, -2.4)
+material_override = SubResource("StandardMaterial3D_ytif4")
+mesh = SubResource("BoxMesh_d60fh")
+
+[node name="RockB" type="MeshInstance3D" parent="Props" unique_id=859807125]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -5.9, 0.25, -2.8)
+material_override = SubResource("StandardMaterial3D_ytif4")
+mesh = SubResource("BoxMesh_2ts7w")
+
+[node name="RockC" type="MeshInstance3D" parent="Props" unique_id=403842]
+transform = Transform3D(0.76604444, 0, -0.6427876, 0, 1, 0, 0.6427876, 0, 0.76604444, 0.7, 0.175, -4.6)
+material_override = SubResource("StandardMaterial3D_ytif4")
+mesh = SubResource("BoxMesh_8awn1")
+
+[node name="RockD" type="MeshInstance3D" parent="Props" unique_id=676985945]
+transform = Transform3D(0.9848077, 0, -0.17364818, 0, 1, 0, 0.17364818, 0, 0.9848077, 4.1, 0.275, 2.2)
+material_override = SubResource("StandardMaterial3D_ytif4")
+mesh = SubResource("BoxMesh_vtoaa")
+
+[node name="PillarA" type="MeshInstance3D" parent="Props" unique_id=1890168643]
+transform = Transform3D(0.9727892, -0.10224427, 0.2079117, 0.104528464, 0.9945219, 0, -0.20677274, 0.02173269, 0.9781476, -5.2, 1.6, -5.5)
+material_override = SubResource("StandardMaterial3D_ytif4")
+mesh = SubResource("BoxMesh_tfbnq")
+
+[node name="PillarB" type="MeshInstance3D" parent="Props" unique_id=260490075]
+transform = Transform3D(0.9305476, 0.13077994, -0.34202012, -0.1391731, 0.99026805, 0, 0.3386916, 0.0476, 0.9396926, 5, 1.1, -6.5)
+material_override = SubResource("StandardMaterial3D_ytif4")
+mesh = SubResource("BoxMesh_5dtva")
+
+[node name="StalagmiteA" type="Sprite3D" parent="Props" unique_id=1866400999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 0, -9)
+centered = false
+offset = Vector2(-32, 0)
+pixel_size = 0.045
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_54edc")
+
+[node name="StalagmiteB" type="Sprite3D" parent="Props" unique_id=1146885138]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2, 0, -10)
+centered = false
+offset = Vector2(-32, 0)
+pixel_size = 0.045
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_54edc")
+
+[node name="StalagmiteC" type="Sprite3D" parent="Props" unique_id=1261034747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -12.5)
+centered = false
+offset = Vector2(-32, 0)
+pixel_size = 0.04
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_54edc")
+
+[node name="StalagmiteD" type="Sprite3D" parent="Props" unique_id=1311313404]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, -13)
+centered = false
+offset = Vector2(-32, 0)
+pixel_size = 0.04
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_54edc")
+
+[node name="LavaRocksA" type="Sprite3D" parent="Props" unique_id=340378310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2, 0, -3.6)
+centered = false
+offset = Vector2(-35.5, 0)
+pixel_size = 0.03125
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_lehem")
+
+[node name="LavaRocksB" type="Sprite3D" parent="Props" unique_id=697058783]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -4.6)
+centered = false
+offset = Vector2(-35.5, 0)
+pixel_size = 0.03125
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_lehem")
+
+[node name="CrystalsA" type="Sprite3D" parent="Props" unique_id=143372012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 0, -6.4)
+centered = false
+offset = Vector2(-29, 0)
+pixel_size = 0.03125
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_t8tcu")
+
+[node name="CrystalsB" type="Sprite3D" parent="Props" unique_id=645379141]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -7)
+centered = false
+offset = Vector2(-29, 0)
+pixel_size = 0.025
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_t8tcu")
+
+[node name="EmbersA" type="Sprite3D" parent="Props" unique_id=626468567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4, 0, -2)
+centered = false
+offset = Vector2(-29.5, 0)
+pixel_size = 0.025
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_hmlmq")
+
+[node name="EmbersB" type="Sprite3D" parent="Props" unique_id=1663791969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8, 0, -3)
+centered = false
+offset = Vector2(-29.5, 0)
+pixel_size = 0.025
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_hmlmq")
+
+[node name="LavaGlowL" type="OmniLight3D" parent="." unique_id=1000825723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.8, -4.5)
+light_color = Color(1, 0.42, 0.12, 1)
+light_energy = 1.69
+omni_range = 6.5
+script = ExtResource("12_et4tq")
+flicker = 0.3
+
+[node name="LavaGlowR" type="OmniLight3D" parent="." unique_id=1988756421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.8, -5)
+light_color = Color(1, 0.42, 0.12, 1)
+light_energy = 1.69
+omni_range = 6.5
+script = ExtResource("12_et4tq")
+flicker = 0.3
+
+[node name="LavaGlowBack" type="OmniLight3D" parent="." unique_id=728328308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -9)
+light_color = Color(1, 0.38, 0.1, 1)
+light_energy = 2.08
+omni_range = 9.0
+script = ExtResource("12_et4tq")

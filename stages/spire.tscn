@@ -1,0 +1,289 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/stage_preset.gd" id="1_x4ki0"]
+[ext_resource type="Texture2D" path="res://art/stages/spire/ground.png" id="2_tlvos"]
+[ext_resource type="Texture2D" path="res://art/stages/spire/path.png" id="3_yuxw2"]
+[ext_resource type="Texture2D" path="res://art/stages/spire/sky.png" id="4_d4u5s"]
+[ext_resource type="Texture2D" path="res://art/stages/spire/far.png" id="5_lf8re"]
+[ext_resource type="Texture2D" path="res://art/stages/spire/hor.png" id="6_7jvnw"]
+[ext_resource type="Texture2D" path="res://art/stages/spire/rock.png" id="7_8iirb"]
+[ext_resource type="Texture2D" path="res://art/stages/spire/prop1.png" id="8_eii5u"]
+[ext_resource type="Texture2D" path="res://art/stages/spire/prop2.png" id="9_p7s5m"]
+[ext_resource type="Texture2D" path="res://art/stages/spire/prop3.png" id="10_636tp"]
+[ext_resource type="Texture2D" path="res://art/stages/spire/prop4.png" id="11_balaw"]
+[ext_resource type="Script" path="res://scripts/flicker_light.gd" id="12_kwi8o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48qsu"]
+albedo_texture = ExtResource("2_tlvos")
+uv1_scale = Vector3(10.909091, 10.909091, 1)
+texture_filter = 4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5cwnv"]
+size = Vector2(60, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djeyt"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("3_yuxw2")
+uv1_scale = Vector3(5.140562, 1, 1)
+texture_filter = 4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iw8ts"]
+size = Vector2(40, 2.8125)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hucxq"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_texture = ExtResource("4_d4u5s")
+uv1_scale = Vector3(3, 1, 1)
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_0adhv"]
+size = Vector2(270, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7gnr"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("5_lf8re")
+uv1_scale = Vector3(3, 1, 1)
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_gt4go"]
+size = Vector2(103.5, 11.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sml21"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("6_7jvnw")
+uv1_scale = Vector3(3, 1, 1)
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_f5rc8"]
+size = Vector2(57.6, 6.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fq1mw"]
+albedo_texture = ExtResource("7_8iirb")
+roughness = 0.95
+uv1_scale = Vector3(0.205, 0.205, 0.205)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_3j443"]
+size = Vector3(1, 0.5, 0.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a801e"]
+size = Vector3(0.9, 0.4, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r18r0"]
+size = Vector3(0.6, 0.3, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4obsp"]
+size = Vector3(0.8, 0.4, 0.7)
+
+[node name="Spire" type="Node3D" unique_id=2141170072]
+script = ExtResource("1_x4ki0")
+stage_name = "SPIRE OF MORTE"
+stage_sub = "STAGE 6  ·  หอคอยวิญญาณ"
+sun_height_deg = 40.0
+sun_from_left_deg = -25.0
+sun_color = Color(0.85, 0.6, 1, 1)
+sun_energy = 0.9
+ambient_color = Color(0.42, 0.34, 0.72, 1)
+ambient_energy = 0.55
+background_color = Color(0.08, 0.04, 0.12, 1)
+exposure = 1.2
+saturation = 0.85
+contrast = 1.3
+glow_strength = 2.8
+haze_color = Color(0.3, 0.14, 0.36, 1)
+shafts_enabled = false
+cloud_darkness = 0.55
+cloud_color = Color(0.08, 0.04, 0.14, 1)
+dust_color = Color(0.55, 1, 0.95, 1)
+dust_amount = 60
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1349830688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+material_override = SubResource("StandardMaterial3D_48qsu")
+mesh = SubResource("PlaneMesh_5cwnv")
+
+[node name="Path" type="MeshInstance3D" parent="." unique_id=1373644766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, 0.2)
+material_override = SubResource("StandardMaterial3D_djeyt")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_iw8ts")
+
+[node name="Backdrop" type="Node3D" parent="." unique_id=867667725]
+
+[node name="Sky" type="MeshInstance3D" parent="Backdrop" unique_id=725045681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.1, -70)
+material_override = SubResource("StandardMaterial3D_hucxq")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_0adhv")
+
+[node name="Far" type="MeshInstance3D" parent="Backdrop" unique_id=1236509276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.12, -42)
+material_override = SubResource("StandardMaterial3D_u7gnr")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_gt4go")
+
+[node name="Hor" type="MeshInstance3D" parent="Backdrop" unique_id=1875995640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92, -20)
+material_override = SubResource("StandardMaterial3D_sml21")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_f5rc8")
+
+[node name="Props" type="Node3D" parent="." unique_id=1921585919]
+
+[node name="RubbleA" type="MeshInstance3D" parent="Props" unique_id=1862231523]
+transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, 3.9, 0.25, -2.6)
+material_override = SubResource("StandardMaterial3D_fq1mw")
+mesh = SubResource("BoxMesh_3j443")
+
+[node name="RubbleB" type="MeshInstance3D" parent="Props" unique_id=1521682528]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -5.7, 0.2, -2.9)
+material_override = SubResource("StandardMaterial3D_fq1mw")
+mesh = SubResource("BoxMesh_a801e")
+
+[node name="RubbleC" type="MeshInstance3D" parent="Props" unique_id=1064776192]
+transform = Transform3D(0.76604444, 0, -0.6427876, 0, 1, 0, 0.6427876, 0, 0.76604444, 0.6, 0.15, -4.8)
+material_override = SubResource("StandardMaterial3D_fq1mw")
+mesh = SubResource("BoxMesh_r18r0")
+
+[node name="RubbleD" type="MeshInstance3D" parent="Props" unique_id=175093511]
+transform = Transform3D(0.9848077, 0, -0.17364818, 0, 1, 0, 0.17364818, 0, 0.9848077, 4.4, 0.2, 2.3)
+material_override = SubResource("StandardMaterial3D_fq1mw")
+mesh = SubResource("BoxMesh_4obsp")
+
+[node name="PillarA" type="Sprite3D" parent="Props" unique_id=2051721153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -10.5)
+centered = false
+offset = Vector2(-28, 0)
+pixel_size = 0.03
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_eii5u")
+
+[node name="PillarB" type="Sprite3D" parent="Props" unique_id=568670362]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 0, -11)
+centered = false
+offset = Vector2(-28, 0)
+pixel_size = 0.03
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_eii5u")
+
+[node name="PillarC" type="Sprite3D" parent="Props" unique_id=342155664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -14)
+centered = false
+offset = Vector2(-28, 0)
+pixel_size = 0.026
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_eii5u")
+
+[node name="BrazierL" type="Sprite3D" parent="Props" unique_id=1924171123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4, 0, -3.6)
+centered = false
+offset = Vector2(-26, 0)
+pixel_size = 0.026
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_p7s5m")
+
+[node name="BrazierR" type="Sprite3D" parent="Props" unique_id=916632988]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 0, -2.6)
+centered = false
+offset = Vector2(-26, 0)
+pixel_size = 0.026
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_p7s5m")
+
+[node name="MasonryA" type="Sprite3D" parent="Props" unique_id=1375416272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 0, -7.4)
+centered = false
+offset = Vector2(-39, 0)
+pixel_size = 0.026
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_636tp")
+
+[node name="MasonryB" type="Sprite3D" parent="Props" unique_id=1886971811]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4, 0, -6.8)
+centered = false
+offset = Vector2(-39, 0)
+pixel_size = 0.024
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_636tp")
+
+[node name="GargoyleA" type="Sprite3D" parent="Props" unique_id=1007006129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4, 0, -6)
+centered = false
+offset = Vector2(-25, 0)
+pixel_size = 0.026
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_balaw")
+
+[node name="GargoyleB" type="Sprite3D" parent="Props" unique_id=1233031292]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6, 0, -5.6)
+centered = false
+offset = Vector2(-25, 0)
+pixel_size = 0.026
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_balaw")
+
+[node name="MasonryFront" type="Sprite3D" parent="Props" unique_id=566876979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 0, 3.9)
+centered = false
+offset = Vector2(-39, 0)
+modulate = Color(0.5, 0.45, 0.6, 1)
+pixel_size = 0.026
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_636tp")
+
+[node name="GhostFlameL" type="OmniLight3D" parent="." unique_id=853067962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4, 1.2, -3.4)
+light_color = Color(0.35, 1, 0.9, 1)
+light_energy = 1.6
+script = ExtResource("12_kwi8o")
+flicker = 0.35
+
+[node name="GhostFlameR" type="OmniLight3D" parent="." unique_id=841585105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 1.2, -2.4)
+light_color = Color(0.35, 1, 0.9, 1)
+light_energy = 1.6
+script = ExtResource("12_kwi8o")
+flicker = 0.35
+
+[node name="AuroraFill" type="OmniLight3D" parent="." unique_id=1487982759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -8)
+light_color = Color(1, 0.4, 0.9, 1)
+light_energy = 0.8
+omni_range = 12.0

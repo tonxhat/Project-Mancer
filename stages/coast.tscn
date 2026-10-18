@@ -1,0 +1,309 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/stage_preset.gd" id="1_ad78q"]
+[ext_resource type="Texture2D" path="res://art/stages/coast/ground.png" id="2_eknph"]
+[ext_resource type="Texture2D" path="res://art/stages/coast/path.png" id="3_v7fvq"]
+[ext_resource type="Texture2D" path="res://art/stages/coast/sky.png" id="4_p1pig"]
+[ext_resource type="Texture2D" path="res://art/stages/coast/far.png" id="5_o82a6"]
+[ext_resource type="Texture2D" path="res://art/stages/coast/hor.png" id="6_klul0"]
+[ext_resource type="Texture2D" path="res://art/stages/coast/rock.png" id="7_btmmx"]
+[ext_resource type="Texture2D" path="res://art/stages/coast/prop1.png" id="8_sykem"]
+[ext_resource type="Texture2D" path="res://art/stages/coast/prop2.png" id="9_dd87k"]
+[ext_resource type="Texture2D" path="res://art/stages/coast/prop3.png" id="10_sl7q7"]
+[ext_resource type="Texture2D" path="res://art/stages/coast/prop4.png" id="11_bdqk0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myq5y"]
+albedo_texture = ExtResource("2_eknph")
+uv1_scale = Vector3(20.425531, 20.425531, 1)
+texture_filter = 4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t67xc"]
+size = Vector2(60, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yod40"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("3_v7fvq")
+uv1_scale = Vector3(5.140562, 1, 1)
+texture_filter = 4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vun20"]
+size = Vector2(40, 2.8125)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yg1d"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_texture = ExtResource("4_p1pig")
+uv1_scale = Vector3(3, 1, 1)
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_joiwg"]
+size = Vector2(270, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mjwi"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("5_o82a6")
+uv1_scale = Vector3(3, 1, 1)
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_n7wot"]
+size = Vector2(103.5, 11.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7hhe"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("6_klul0")
+uv1_scale = Vector3(3, 1, 1)
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ta6kh"]
+size = Vector2(57.6, 6.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1861"]
+albedo_texture = ExtResource("7_btmmx")
+roughness = 0.95
+uv1_scale = Vector3(0.205, 0.205, 0.205)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_7giyh"]
+size = Vector3(1.3, 0.7, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ft3n2"]
+size = Vector3(1, 0.5, 0.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_taoyl"]
+size = Vector3(0.6, 0.35, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cxom5"]
+size = Vector3(0.9, 0.55, 0.8)
+
+[node name="Coast" type="Node3D" unique_id=1807849806]
+script = ExtResource("1_ad78q")
+stage_name = "TIDEPOOL COAST"
+stage_sub = "STAGE 2  ·  ชายฝั่งน้ำวน"
+sun_height_deg = 52.0
+sun_from_left_deg = -35.0
+sun_color = Color(1, 0.95, 0.84, 1)
+sun_energy = 1.6
+ambient_color = Color(0.45, 0.72, 0.82, 1)
+ambient_energy = 0.25
+background_color = Color(0.55, 0.82, 0.96, 1)
+exposure = 1.05
+saturation = 0.9
+contrast = 1.3
+glow_strength = 1.6
+haze_density = 0.003
+haze_color = Color(0.8, 0.92, 1, 1)
+shafts_enabled = false
+cloud_darkness = 0.45
+cloud_color = Color(0.08, 0.2, 0.28, 1)
+dust_color = Color(1, 1, 1, 1)
+dust_amount = 30
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=138540573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+material_override = SubResource("StandardMaterial3D_myq5y")
+mesh = SubResource("PlaneMesh_t67xc")
+
+[node name="Path" type="MeshInstance3D" parent="." unique_id=138427781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, 0.2)
+material_override = SubResource("StandardMaterial3D_yod40")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_vun20")
+
+[node name="Backdrop" type="Node3D" parent="." unique_id=939534528]
+
+[node name="Sky" type="MeshInstance3D" parent="Backdrop" unique_id=913197539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.1, -70)
+material_override = SubResource("StandardMaterial3D_3yg1d")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_joiwg")
+
+[node name="Far" type="MeshInstance3D" parent="Backdrop" unique_id=529610125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.12, -42)
+material_override = SubResource("StandardMaterial3D_0mjwi")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_n7wot")
+
+[node name="Hor" type="MeshInstance3D" parent="Backdrop" unique_id=2121176725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92, -20)
+material_override = SubResource("StandardMaterial3D_a7hhe")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_ta6kh")
+
+[node name="Props" type="Node3D" parent="." unique_id=824426861]
+
+[node name="RockA" type="MeshInstance3D" parent="Props" unique_id=1960417846]
+transform = Transform3D(0.90630776, 0, -0.42261827, 0, 1, 0, 0.42261827, 0, 0.90630776, 3.7, 0.35, -2.4)
+material_override = SubResource("StandardMaterial3D_a1861")
+mesh = SubResource("BoxMesh_7giyh")
+
+[node name="RockB" type="MeshInstance3D" parent="Props" unique_id=789364818]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -5.9, 0.25, -2.8)
+material_override = SubResource("StandardMaterial3D_a1861")
+mesh = SubResource("BoxMesh_ft3n2")
+
+[node name="RockC" type="MeshInstance3D" parent="Props" unique_id=2084670178]
+transform = Transform3D(0.76604444, 0, -0.6427876, 0, 1, 0, 0.6427876, 0, 0.76604444, 0.7, 0.175, -4.6)
+material_override = SubResource("StandardMaterial3D_a1861")
+mesh = SubResource("BoxMesh_taoyl")
+
+[node name="RockD" type="MeshInstance3D" parent="Props" unique_id=825256058]
+transform = Transform3D(0.9848077, 0, -0.17364818, 0, 1, 0, 0.17364818, 0, 0.9848077, 4.1, 0.275, 2.2)
+material_override = SubResource("StandardMaterial3D_a1861")
+mesh = SubResource("BoxMesh_cxom5")
+
+[node name="PalmA" type="Sprite3D" parent="Props" unique_id=49941914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -9)
+centered = false
+offset = Vector2(-37.5, 0)
+pixel_size = 0.04
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_sykem")
+metadata/sway = 0.08
+
+[node name="PalmB" type="Sprite3D" parent="Props" unique_id=765157189]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2, 0, -10)
+centered = false
+offset = Vector2(-37.5, 0)
+pixel_size = 0.04
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_sykem")
+metadata/sway = 0.08
+
+[node name="PalmC" type="Sprite3D" parent="Props" unique_id=792410316]
+transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 1, 2.4, 0, -12.5)
+centered = false
+offset = Vector2(-37.5, 0)
+pixel_size = 0.04
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_sykem")
+metadata/sway = 0.08
+
+[node name="PalmD" type="Sprite3D" parent="Props" unique_id=1122479495]
+transform = Transform3D(-0.8, 0, 0, 0, 0.8, 0, 0, 0, 1, 9, 0, -12.9)
+centered = false
+offset = Vector2(-37.5, 0)
+pixel_size = 0.04
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_sykem")
+metadata/sway = 0.08
+
+[node name="PalmE" type="Sprite3D" parent="Props" unique_id=159618343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1, 0, -14)
+centered = false
+offset = Vector2(-37.5, 0)
+pixel_size = 0.04
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("8_sykem")
+metadata/sway = 0.08
+
+[node name="BouldersA" type="Sprite3D" parent="Props" unique_id=899976217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -3.6)
+centered = false
+offset = Vector2(-43, 0)
+pixel_size = 0.03125
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_dd87k")
+
+[node name="BouldersB" type="Sprite3D" parent="Props" unique_id=1900280805]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4, 0, -5)
+centered = false
+offset = Vector2(-43, 0)
+pixel_size = 0.03125
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("9_dd87k")
+
+[node name="PostsA" type="Sprite3D" parent="Props" unique_id=736323142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8, 0, -6.6)
+centered = false
+offset = Vector2(-20.5, 0)
+pixel_size = 0.03125
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_sl7q7")
+
+[node name="PostsB" type="Sprite3D" parent="Props" unique_id=1931309275]
+transform = Transform3D(-0.9, 0, 0, 0, 0.9, 0, 0, 0, 1, 7.4, 0, -6.2)
+centered = false
+offset = Vector2(-20.5, 0)
+pixel_size = 0.03125
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("10_sl7q7")
+
+[node name="GrassA" type="Sprite3D" parent="Props" unique_id=1074719245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2, 0, -4.8)
+centered = false
+offset = Vector2(-28, 0)
+pixel_size = 0.022
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_bdqk0")
+metadata/sway = 0.16
+
+[node name="GrassB" type="Sprite3D" parent="Props" unique_id=1642300064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9, 0, -3)
+centered = false
+offset = Vector2(-28, 0)
+pixel_size = 0.022
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_bdqk0")
+metadata/sway = 0.16
+
+[node name="GrassFront" type="Sprite3D" parent="Props" unique_id=1719330549]
+transform = Transform3D(1.2, 0, 0, 0, 0.8, 0, 0, 0, 1, -1.5, 0, 3.9)
+centered = false
+offset = Vector2(-28, 0)
+modulate = Color(0.55, 0.6, 0.5, 1)
+pixel_size = 0.025
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_bdqk0")
+metadata/sway = 0.16
+
+[node name="GrassFront2" type="Sprite3D" parent="Props" unique_id=117016710]
+transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, 4.3, 0, 4.4)
+centered = false
+offset = Vector2(-28, 0)
+modulate = Color(0.45, 0.5, 0.42, 1)
+pixel_size = 0.025
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("11_bdqk0")
+metadata/sway = 0.16

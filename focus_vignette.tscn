@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/focus_vignette.gd" id="1_fv"]
+[ext_resource type="Shader" path="res://shaders/focus_vignette.gdshader" id="2_fv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fv"]
+shader = ExtResource("2_fv")
+
+[node name="FocusVignette" type="CanvasLayer"]
+script = ExtResource("1_fv")
+
+[node name="Shade" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fv")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2

@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/battle_ui.gd" id="1_ui"]
+
+[node name="BattleUI" type="CanvasLayer"]
+script = ExtResource("1_ui")

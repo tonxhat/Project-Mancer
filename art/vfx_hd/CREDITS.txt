@@ -1,0 +1,5 @@
+Textures flare/light/star/spark/trace/smoke/flame/fire/scorch/twirl/circle/magic/slash/scratch/dirt:
+  Kenney Particle Pack 1.1 by Kenney (kenney.nl) — CC0 (public domain), via github.com/Calinou/kenney-particle-pack
+  Converted to 256 px greyscale masks for the VFX shaders.
+noise_cloud / noise_streak / noise_erode: generated for this project (tileable).
+Technique references: realtimevfx.com, 80.lv "Creating a tornado in Unity", GODOT-VFX-LIBRARY (MIT, haowg).
